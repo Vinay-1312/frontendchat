@@ -22,7 +22,7 @@ const Chat = () => {
   useEffect(() => {
     const fetchChats = async () => {
       try {
-        const response = await fetch('http://localhost:5152/fetchChat', {
+        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/fetchChat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const Chat = () => {
   
     fetchChats();
     const hubConnection = new HubConnectionBuilder()
-    .withUrl('http://localhost:5152/friendRequestHub') // Replace with the actual hub URL
+    .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
     .build();
     //console.log("Connection1",hubConnection)
 
@@ -107,7 +107,7 @@ hubConnection.invoke('JoinUserGroup', user?.email)
     message.timestamp = timeString
     message.id = chatid
    
-    const response = await fetch('http://localhost:5152/insertChat', {
+    const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/insertChat', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

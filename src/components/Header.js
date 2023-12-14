@@ -29,7 +29,7 @@ const Header = () =>
 
             //console.log(currentURL.endsWith("add") && currentURL.endsWith("friend"));
             const hubConnection = new HubConnectionBuilder()
-            .withUrl('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+            .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
             .build();
             console.log("Connection1",hubConnection)
       

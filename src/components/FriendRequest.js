@@ -17,7 +17,7 @@ const FriendRequest = () =>
    const handleFriendRequest = async(request,status) =>
    {
     try {
-        const response = await fetch('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/addFriend', {
+        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/addFriend', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const FriendRequest = () =>
    }
     useEffect(() => {
     const hubConnection = new HubConnectionBuilder()
-            .withUrl('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+            .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
             .build();
             console.log("Connection1",hubConnection)
       
@@ -79,7 +79,7 @@ const FriendRequest = () =>
     const fetchData = async() =>
     {
         
-        const response = await fetch('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/friendRequests', {
+        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequests', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

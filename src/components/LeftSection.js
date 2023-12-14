@@ -30,7 +30,7 @@ const LeftSection = () =>
 
     useEffect(()=>{
         const hubConnection = new HubConnectionBuilder()
-        .withUrl('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+        .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
         .build();
         console.log("Connection1",hubConnection)
   
@@ -63,7 +63,7 @@ const LeftSection = () =>
     const fetchData = async() =>
     {
         
-        const response = await fetch('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/friends', {
+        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friends', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ const LeftSection = () =>
             const data = await response.json();
             console.log("data",data);
             setFriends(data?.Message?.Result);
-            const response1 = await fetch('https://backend-qro5vurgv-vinays-projects-4c909deb.vercel.app/ids', {
+            const response1 = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/ids', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
