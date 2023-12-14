@@ -1,1 +1,1 @@
-export const URL = "https://backend-i8qx6xld9-vinays-projects-4c909deb.vercel.app/";
+export const URL = "https://chatapplcation.azurewebsites.net/";
