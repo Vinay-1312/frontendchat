@@ -4,7 +4,7 @@ import LeftSection from './LeftSection';
 import { useSelector } from 'react-redux';
 import { io } from 'socket.io-client';
 import signalR from '@microsoft/signalr';
-
+import { URL } from './constant';
 
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 
@@ -17,7 +17,7 @@ const FriendRequest = () =>
    const handleFriendRequest = async(request,status) =>
    {
     try {
-        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/addFriend', {
+        const response = await fetch(URL+'addFriend', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const FriendRequest = () =>
    }
     useEffect(() => {
     const hubConnection = new HubConnectionBuilder()
-            .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+            .withUrl(URL+'friendRequestHub') // Replace with the actual hub URL
             .build();
             console.log("Connection1",hubConnection)
       
@@ -79,7 +79,7 @@ const FriendRequest = () =>
     const fetchData = async() =>
     {
         
-        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequests', {
+        const response = await fetch(URL+'friendRequests', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

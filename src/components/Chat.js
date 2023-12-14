@@ -5,7 +5,7 @@ import LeftSection from './LeftSection';
 import Header from './Header';
 import { useSelector } from 'react-redux';
 import { HubConnectionBuilder } from '@microsoft/signalr';
-
+import { URL } from './constant';
 const Chat = () => {
   const { username } = useParams();
   const { chatid } = useParams();
@@ -22,7 +22,7 @@ const Chat = () => {
   useEffect(() => {
     const fetchChats = async () => {
       try {
-        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/fetchChat', {
+        const response = await fetch(URL+'fetchChat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const Chat = () => {
   
     fetchChats();
     const hubConnection = new HubConnectionBuilder()
-    .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+    .withUrl(URL+'friendRequestHub') // Replace with the actual hub URL
     .build();
     //console.log("Connection1",hubConnection)
 
@@ -107,7 +107,7 @@ hubConnection.invoke('JoinUserGroup', user?.email)
     message.timestamp = timeString
     message.id = chatid
    
-    const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/insertChat', {
+    const response = await fetch(URL+'insertChat', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Logo, supportedLanguage } from "../utils/constant";
-import { addConnection } from "../utils/connectionSlice";
+import { URL } from "./constant";
 import { HubConnectionBuilder } from "@microsoft/signalr";
 const Header = () =>
 {
@@ -29,7 +29,7 @@ const Header = () =>
 
             //console.log(currentURL.endsWith("add") && currentURL.endsWith("friend"));
             const hubConnection = new HubConnectionBuilder()
-            .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+            .withUrl(URL+'friendRequestHub') // Replace with the actual hub URL
             .build();
             console.log("Connection1",hubConnection)
       

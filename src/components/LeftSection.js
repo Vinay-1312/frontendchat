@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { chatFriend } from "../utils/chatSlice";
+import { URL } from "./constant";
 import { HubConnection,HubConnectionBuilder } from "@microsoft/signalr";
 const LeftSection = () =>
 {   const [friends, setFriends] = useState([]);
@@ -30,7 +31,7 @@ const LeftSection = () =>
 
     useEffect(()=>{
         const hubConnection = new HubConnectionBuilder()
-        .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+        .withUrl(URL+'friendRequestHub') // Replace with the actual hub URL
         .build();
         console.log("Connection1",hubConnection)
   
@@ -63,7 +64,7 @@ const LeftSection = () =>
     const fetchData = async() =>
     {
         
-        const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friends', {
+        const response = await fetch(URL+'friends', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -79,7 +80,7 @@ const LeftSection = () =>
             const data = await response.json();
             console.log("data",data);
             setFriends(data?.Message?.Result);
-            const response1 = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/ids', {
+            const response1 = await fetch(URL+'ids', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

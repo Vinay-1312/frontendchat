@@ -1,6 +1,7 @@
 import { useRef,useState } from "react";
 import { useSelector } from "react-redux";
 import { HubConnectionBuilder } from "@microsoft/signalr";
+import { URL } from "./constant";
 const AddFriendForm = () =>
 {
 
@@ -20,7 +21,7 @@ const AddFriendForm = () =>
         {
         try {
 
-            const response = await fetch('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/addFriend', {
+            const response = await fetch(URL+'addFriend', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ const AddFriendForm = () =>
             setShowPopup(true);
            
         const hubConnection = new HubConnectionBuilder()
-        .withUrl('https://backend-fkbdvqgnh-vinays-projects-4c909deb.vercel.app/friendRequestHub') // Replace with the actual hub URL
+        .withUrl(URL+'friendRequestHub') // Replace with the actual hub URL
         .build();
 
         hubConnection
