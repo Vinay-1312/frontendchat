@@ -34,6 +34,7 @@ const AddFriendForm = () =>
             });
       
             if (!response.ok) {
+              console.log("Responsefrom Server",response)
               throw new Error('Failed to send email');
             }
       

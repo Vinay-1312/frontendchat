@@ -30,6 +30,7 @@ const FriendRequest = () =>
         });
   
         if (!response.ok) {
+          console.log("Response from Server",response);
           throw new Error('Failed to send email');
         }
     }

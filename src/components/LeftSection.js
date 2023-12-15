@@ -29,7 +29,7 @@ const LeftSection = () =>
     fetchData();
     },[])
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         const hubConnection = new HubConnectionBuilder()
         .withUrl(URL+'friendRequestHub') // Replace with the actual hub URL
         .build();
@@ -92,6 +92,7 @@ const LeftSection = () =>
 
             });
             if (!response1.ok) {
+              console.log("response from server", response);
               throw new Error('Failed to send email');
             }
             const data1 = await response1.json();
