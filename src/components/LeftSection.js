@@ -75,6 +75,7 @@ const LeftSection = () =>
             });
       
             if (!response.ok) {
+              console.log("response from server", response);
               throw new Error('Failed to send email');
             }
             const data = await response.json();
